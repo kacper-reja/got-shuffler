@@ -4,11 +4,14 @@ import { InputText } from "primereact/inputtext";
 import { useState } from "react";
 import "./App.css";
 import { Houses, Player } from "./components/types";
+import PlayerTable from "./components/PlayerTable";
 
 function App() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [textValue, setTextValue] = useState<string>("");
   const [checkboxValue, setCheckboxValue] = useState<boolean>(false);
+
+  return <PlayerTable />;
 
   return (
     <>

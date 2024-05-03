@@ -1,8 +1,3 @@
-export interface Player {
-  playerName: string
-  isTidesOfBattleEnjoyer: boolean
-  house: string
-}
 
 export enum Houses {
   Greyjoy = '1',
