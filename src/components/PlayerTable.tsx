@@ -1,12 +1,12 @@
-import { DataTable } from "primereact/datatable";
-import { Column, ColumnEvent } from "primereact/column";
-import { Player } from "../player";
-import CellEditors, { ToBEnjoyerBody } from "./cells/CellEditors";
-import { useState } from "react";
 import { Button } from "primereact/button";
-import { assingHouses } from "../logic/houseAssigner";
+import { Column, ColumnEvent } from "primereact/column";
+import { DataTable } from "primereact/datatable";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { assingHouses } from "../logic/houseAssigner";
+import { Player } from "../player";
+import CellEditors, { ToBEnjoyerBody } from "./cells/CellEditors";
 
 export default function PlayerTable() {
   const [players, setPlayers] = useState([
@@ -15,7 +15,8 @@ export default function PlayerTable() {
 
   const onCellEditComplete = (e: ColumnEvent) => {
     if (e.field == "name") {
-      if (players.findIndex((p) => p.name === e.newValue) !== -1) {
+      const index = players.findIndex((p) => p.name === e.newValue);
+      if (index !== -1 && index !== e.rowData.id - 1) {
         toast.error("Name must be unique");
         return;
       }
