@@ -1,0 +1,8 @@
+export enum Houses {
+  GREYJOY = "GREYJOY",
+  STARK = "STARK",
+  LANNISTER = "LANNISTER",
+  BARATHERON = "BARATHERON",
+  MARTELL = "MARTELL",
+  TYRELL = "TYRELL",
+}
