@@ -1,25 +1,37 @@
 interface TPlayer {
   name: string;
   id: number;
-  house: string;
+  house?: string;
   isToBEnjoyer?: boolean;
+  setIsToBEnjoyer(isEnjoyer: boolean): void;
+  setName(name: string): void;
+}
+
+interface TPlayerConstructor {
+  name: string;
+  id: number;
 }
 
 export class Player implements TPlayer {
   name: string;
   id: number;
-  isToBEnjoyer: boolean = false;
-  house: string;
-  constructor(opt: TPlayer) {
+  isToBEnjoyer?: boolean = false;
+  house?: string = undefined;
+
+  constructor(opt: TPlayerConstructor) {
     this.name = opt.name;
     this.id = opt.id;
-    this.house = opt.house;
   }
-}
 
-export class ToBEnjoyer extends Player {
-  constructor(opt: TPlayer) {
-    super(opt);
-    this.isToBEnjoyer = true;
+  setIsToBEnjoyer(isEnjoyer: boolean): void {
+    this.isToBEnjoyer = isEnjoyer;
+  }
+
+  setName(name: string) {
+    this.name = name;
+  }
+
+  assingHouse(house: string) {
+    this.house = house;
   }
 }

@@ -1,9 +1,8 @@
-
 export enum Houses {
-  Greyjoy = '1',
-  Stark = '2',
-  Lannister = '3',
-  Baratheon = '4',
-  Martell = '5',
-  Tyrell = '6',
+  GREYJOY = "GREYJOY",
+  STARK = "STARK",
+  LANNISTER = "LANNISTER",
+  BARATHERON = "BARATHERON",
+  MARTELL = "MARTELL",
+  TYRELL = "TYRELL",
 }
